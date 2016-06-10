@@ -95,12 +95,10 @@ function createChatDiv (state) {
   var chatMessages = Object.keys(state.messages).reduce(function (previous, currentKey) {
     return previous.concat([
       h('div', {
-        style: {
-          marginBottom: '5px'
-        }
+        style: { marginBottom: '5px' }
       }, [
         h('label', {
-          style: {color: 'red'}
+          style: { color: 'red' }
         }, state.messages[currentKey].username),
         ': ',
         h('span', state.messages[currentKey].message)
@@ -110,8 +108,6 @@ function createChatDiv (state) {
 
   // Ok Sweet! We have our chat elements. Toss them in a DIV and voila
   return h('div', {
-    style: {
-      overflowY: 'scroll'
-    }
+    style: { overflowY: 'scroll' }
   }, chatMessages)
 }
